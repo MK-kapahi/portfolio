@@ -1,0 +1,141 @@
+/* Section */
+.skills-section {
+  padding: 5rem 1rem;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.skills-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827; /* gray-900 */
+}
+
+.skills-header .underline {
+  width: 6rem;
+  height: 4px;
+  background-color: #2563eb; /* blue-600 */
+  margin: 1rem auto;
+  border-radius: 9999px;
+}
+
+.skills-header p {
+  font-size: 1.1rem;
+  color: #4b5563; /* gray-600 */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards */
+.skill-card {
+  background-color: #f9fafb; /* gray-50 */
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Skills list */
+.skill-item {
+  margin-bottom: 1.25rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #374151; /* gray-700 */
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e5e7eb; /* gray-200 */
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s ease-out;
+}
+
+/* Colors */
+.bg-blue {
+  background-color: #2563eb; /* blue-600 */
+}
+
+.bg-emerald {
+  background-color: #059669; /* emerald-600 */
+}
+
+.bg-purple {
+  background-color: #7c3aed; /* purple-600 */
+}
+
+.bg-gray {
+  background-color: #6b7280; /* gray-600 */
+}
+
+/* Tech Section */
+.tech-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.tech-section p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.tech-badge {
+  background-color: #dbeafe; /* blue-100 */
+  color: #1e40af; /* blue-800 */
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.tech-badge:hover {
+  background-color: #bfdbfe; /* blue-200 */
+}
