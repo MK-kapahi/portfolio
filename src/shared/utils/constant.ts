@@ -65,3 +65,36 @@ export const projects = [
         "link": ""
     }
 ]
+
+export const skillCategories = [
+    {
+        title: "Frontend",
+        skills: [
+            { name: "React", level: 95 },
+            { name: "TypeScript", level: 90 },
+            { name: "Tailwind CSS", level: 85 },
+            { name: "Next.js", level: 80 },
+        ],
+        color: "blue",
+    },
+    {
+        title: "Backend",
+        skills: [
+            { name: "Node.js", level: 90 },
+            { name: "Python", level: 85 },
+            { name: "PostgreSQL", level: 80 },
+            { name: "MongoDB", level: 75 },
+        ],
+        color: "emerald",
+    },
+    {
+        title: "Tools & Others",
+        skills: [
+            { name: "Git & GitHub", level: 95 },
+            { name: "Docker", level: 70 },
+            { name: "AWS", level: 65 },
+            { name: "Figma", level: 80 },
+        ],
+        color: "purple",
+    },
+];

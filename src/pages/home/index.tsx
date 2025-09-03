@@ -1,7 +1,8 @@
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './style.css';
 import { user } from '../../shared/utils/constant';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Home = () => {
   const scrollToAbout = () => {
@@ -26,10 +27,6 @@ const Home = () => {
 
   return (
     <section id="home" className="home-section">
-      {/* Background blobs */}
-      <div className="blob blob-blue"></div>
-      <div className="blob blob-purple"></div>
-      <div className="blob blob-green"></div>
 
       {/* Content */}
       <motion.div
@@ -64,25 +61,25 @@ const Home = () => {
         {/* Social Links */}
         <motion.div className="social-links" variants={itemVariants}>
           <motion.a
-            href="https://github.com"
+            href={user.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={iconHover}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Github size={28} />
+            <FaGithub size={28} />
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href={user.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={iconHover}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Linkedin size={28} />
+            <FaLinkedin size={28} />
           </motion.a>
           <motion.a
-            href="mailto:alex@example.com"
+            href={user.email}
             whileHover={iconHover}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -92,9 +89,9 @@ const Home = () => {
       </motion.div>
 
       {/* Scroll down */}
-      <button onClick={scrollToAbout} className="scroll-down">
+      {/* <button onClick={scrollToAbout} className="scroll-down">
         <ChevronDown size={36} />
-      </button>
+      </button> */}
     </section>
   );
 };

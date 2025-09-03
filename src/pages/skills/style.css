@@ -139,3 +139,9 @@
 .tech-badge:hover {
   background-color: #bfdbfe; /* blue-200 */
 }
+
+.skills-animate{
+  display: flex;
+  gap : 24px;
+  flex-wrap: wrap;
+}

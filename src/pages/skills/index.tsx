@@ -1,51 +1,9 @@
+import { motion } from "framer-motion";
+import { skillCategories } from "../../shared/utils/constant";
+import { colorFor, getColorClasses } from "../../shared/utils/function";
 import "./style.css";
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Next.js", level: 80 },
-      ],
-      color: "blue",
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
-      ],
-      color: "emerald",
-    },
-    {
-      title: "Tools & Others",
-      skills: [
-        { name: "Git & GitHub", level: 95 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "Figma", level: 80 },
-      ],
-      color: "purple",
-    },
-  ];
-
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case "blue":
-        return "bg-blue";
-      case "emerald":
-        return "bg-emerald";
-      case "purple":
-        return "bg-purple";
-      default:
-        return "bg-gray";
-    }
-  };
 
   return (
     <section id="skills" className="skills-section">
@@ -95,7 +53,8 @@ const Skills = () => {
             industry trends
           </p>
           <div className="tech-badges">
-            {[
+            <div className="skills-animate">
+              {[
               "React",
               "TypeScript",
               "Node.js",
@@ -105,12 +64,30 @@ const Skills = () => {
               "PostgreSQL",
               "MongoDB",
               "Git",
-              "Figma",
-            ].map((tech, index) => (
-              <span key={index} className="tech-badge">
-                {tech}
-              </span>
-            ))}
+            ].map((skill, i) => (
+                <motion.span
+                  key={skill}
+                  initial={{ y: 0, opacity: 1 }}
+                  animate={{ y: [0, -14, 0, 14, 0] }} // smooth float loop
+                  transition={{
+                    duration: 2.4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.2,
+                  }}
+                  style={{
+                    display: "inline-block",
+                    fontWeight: 800,
+                    fontSize: "26px",
+                    letterSpacing: "0.5px",
+                    color: colorFor(skill),
+                    textShadow: "0 2px 10px rgba(0,0,0,0.35)",
+                  }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

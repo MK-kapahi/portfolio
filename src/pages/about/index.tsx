@@ -70,7 +70,7 @@ const About = () => {
               />
             </div>
             <div className="experience-badge">
-              <div className="years">5+</div>
+              <div className="years">2+</div>
               <div className="label">Years Experience</div>
             </div>
           </div>

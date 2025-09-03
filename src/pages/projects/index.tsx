@@ -1,7 +1,7 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import './style.css'; // Import CSS file
 import { projects } from '../../shared/utils/constant';
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
 
@@ -31,7 +31,7 @@ const Projects = () => {
                       <ExternalLink size={20} />
                     </a>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <Github size={20} />
+                      <FaGithub size={20} />
                     </a>
                   </div>
                 </div>
@@ -53,14 +53,14 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="d-flex justify-content-center mt-5">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="view-more"
           >
-            <Github className="mr-2" size={20} />
+            <FaGithub className="mr-2" size={20} />
             View More on GitHub
           </a>
         </div>
