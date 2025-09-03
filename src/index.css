@@ -1,0 +1,243 @@
+/* Modern Color Palette & Global Styles */
+:root {
+  /* Primary Colors - Modern Purple/Blue Gradient */
+  --primary-50: #f0f4ff;
+  --primary-100: #e0ebff;
+  --primary-200: #c7d7fe;
+  --primary-300: #a5b8fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  /* Accent Colors - Vibrant Gradients */
+  --accent-pink: #ec4899;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #06b6d4;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
+
+  /* Neutral Colors - Warm Grays */
+  --neutral-50: #fafaf9;
+  --neutral-100: #f5f5f4;
+  --neutral-200: #e7e5e4;
+  --neutral-300: #d6d3d1;
+  --neutral-400: #a8a29e;
+  --neutral-500: #78716c;
+  --neutral-600: #57534e;
+  --neutral-700: #44403c;
+  --neutral-800: #292524;
+  --neutral-900: #1c1917;
+
+  /* Dark Mode Colors */
+  --dark-bg-primary: #0f0f23;
+  --dark-bg-secondary: #16153a;
+  --dark-bg-tertiary: #1e1b4b;
+  --dark-surface: #252550;
+
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-purple) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--primary-500) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-orange) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-secondary) 50%, var(--dark-bg-tertiary) 100%);
+  
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px var(--primary-400));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--primary-400)) drop-shadow(0 0 30px var(--primary-600));
+  }
+}
+
+@keyframes floatingBlob {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) translateX(-15px) rotate(240deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Enhanced Cursor - Disabled for better UX on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
+
+  body {
+    cursor: none;
+  }
+
+  a, button, input, textarea, [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-400);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects for Interactive Elements */
+.hover-glow:hover {
+  filter: drop-shadow(0 0 20px var(--primary-400));
+}
+
+/* Smooth Transitions */
+* {
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Selection Colors */
+::selection {
+  background: var(--primary-500);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--primary-500);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-secondary);
+}

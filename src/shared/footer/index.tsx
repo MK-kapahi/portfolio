@@ -8,10 +8,30 @@ const Footer = () => {
 
   const footerVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8,
+        staggerChildren: 0.2 
+      } 
+    },
   };
 
-  const iconHover = { scale: 1.2, color: '#ffffff' };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const iconHover = { 
+    scale: 1.3, 
+    y: -3,
+    transition: { type: "spring", stiffness: 400 }
+  };
 
   return (
     <motion.footer
@@ -22,50 +42,77 @@ const Footer = () => {
       variants={footerVariants}
     >
       <div className="footer-container">
-        <div className="footer-grid">
+        <motion.div className="footer-grid" variants={footerVariants}>
           {/* Brand */}
-          <div className="footer-brand">
-            <h3 className="footer-title">{user.name}</h3>
-            <p className="footer-description">{user.footer_description}</p>
-          </div>
+          <motion.div className="footer-brand" variants={itemVariants}>
+            <motion.h3 
+              className="footer-title"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              {user.name}
+            </motion.h3>
+            <motion.p 
+              className="footer-description"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {user.footer_description}
+            </motion.p>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="footer-links">
+          <motion.div className="footer-links" variants={itemVariants}>
             <h4 className="footer-heading">Quick Links</h4>
             <div className="footer-links-grid">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#skills">Skills</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
-              <a href="/resume.pdf">Resume</a>
+              {['Home', 'About', 'Skills', 'Projects', 'Contact', 'Resume'].map((link, index) => (
+                <motion.a 
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ x: 8, transition: { type: "spring", stiffness: 400 } }}
+                >
+                  {link}
+                </motion.a>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="footer-contact">
+          <motion.div className="footer-contact" variants={itemVariants}>
             <h4 className="footer-heading">Get In Touch</h4>
-            <div className="footer-contact-info">
+            <motion.div 
+              className="footer-contact-info"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <p>{user.email}</p>
               <p>{user.contact}</p>
               <p>{user.address}</p>
-            </div>
-            <div className="footer-icons">
+            </motion.div>
+            <motion.div 
+              className="footer-icons"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               <motion.a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={iconHover}
-                transition={{ type: 'spring', stiffness: 300 }}
               >
                 <FaGithub className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href={user.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={iconHover}
-                transition={{ type: 'spring', stiffness: 300 }}
               >
                 <FaLinkedin className="w-5 h-5" />
               </motion.a>
@@ -74,13 +121,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={iconHover}
-                transition={{ type: 'spring', stiffness: 300 }}
               >
                 <FaTwitter className="w-5 h-5" />
               </motion.a>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Footer bottom */}
         <motion.div
@@ -88,9 +134,25 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p>© {currentYear} {user.name}. All rights reserved.</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            © {currentYear} {user.name}. All rights reserved.
+          </motion.p>
+          <motion.div 
+            className="footer-made"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+          >
+            <span>Made with </span>
+            <span className="heart-icon">❤️</span>
+            <span> and lots of coffee</span>
+          </motion.div>
         </motion.div>
       </div>
     </motion.footer>

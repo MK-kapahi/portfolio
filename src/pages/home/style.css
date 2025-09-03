@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom right, #0f172a, #0a192f, #0f172a);
+  background: var(--gradient-dark);
+  background-attachment: fixed;
   color: white;
   position: relative;
   overflow: hidden;
@@ -16,44 +17,59 @@
 .blob {
   position: absolute;
   border-radius: 50%;
-  mix-blend-mode: multiply;
-  filter: blur(80px);
-  opacity: 0.2;
+  mix-blend-mode: screen;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation-duration: var(--duration, 15s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .blob-blue {
-  top: 25%;
-  left: 25%;
-  width: 18rem;
-  height: 18rem;
-  background: #3b82f6;
-  animation: pulseBlob 10s infinite ease-in-out;
+  top: 20%;
+  left: 10%;
+  width: 25rem;
+  height: 25rem;
+  background: radial-gradient(circle, var(--primary-400), var(--accent-cyan));
+  animation: floatingBlob 12s infinite ease-in-out;
 }
 
 .blob-purple {
-  top: 30%;
-  right: 25%;
-  width: 18rem;
-  height: 18rem;
-  background: #a855f7;
-  animation: pulseBlob 12s infinite ease-in-out 2s;
+  top: 10%;
+  right: 15%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, var(--accent-purple), var(--accent-pink));
+  animation: floatingBlob 18s infinite ease-in-out 3s;
 }
 
 .blob-green {
-  bottom: 25%;
-  left: 30%;
-  width: 18rem;
-  height: 18rem;
-  background: #10b981;
-  animation: pulseBlob 15s infinite ease-in-out 4s;
+  bottom: 10%;
+  left: 20%;
+  width: 20rem;
+  height: 20rem;
+  background: radial-gradient(circle, var(--accent-green), var(--accent-cyan));
+  animation: floatingBlob 20s infinite ease-in-out 6s;
 }
 
-@keyframes pulseBlob {
+.blob-orange {
+  bottom: 20%;
+  right: 20%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, var(--accent-orange), var(--accent-pink));
+  animation: floatingBlob 16s infinite ease-in-out 2s;
+}
+
+@keyframes floatingBlob {
   0%, 100% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg) translateY(0px);
   }
-  50% {
-    transform: scale(1.3) rotate(45deg);
+  33% {
+    transform: scale(1.1) rotate(120deg) translateY(-20px);
+  }
+  66% {
+    transform: scale(0.9) rotate(240deg) translateY(20px);
   }
 }
 
@@ -69,20 +85,27 @@
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   margin: 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary-300) 50%, var(--accent-cyan) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s ease-in-out infinite;
 }
 
 .hero-subtitle {
   font-size: clamp(1.25rem, 4vw, 2rem);
-  color: #d1d5db;
+  color: var(--neutral-200);
   font-weight: 300;
+  margin-bottom: 1.5rem;
 }
 
 .hero-description {
   font-size: 1.125rem;
   max-width: 700px;
   margin: 1.5rem auto;
-  color: #d1d5db;
+  color: var(--neutral-200);
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 /* Buttons */
@@ -102,34 +125,70 @@
 
 .btn-primary {
   padding: 0.75rem 2rem;
-  background: #2563eb;
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 12px;
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: var(--shadow-colored);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: #1e40af;
-  transform: scale(1.05);
+  background: var(--gradient-secondary);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
 }
 
 .btn-outline {
   padding: 0.75rem 2rem;
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--dark-bg-primary), var(--dark-bg-primary)) padding-box,
+              var(--gradient-secondary) border-box;
+  color: white;
   border-radius: 12px;
-  background: transparent;
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-secondary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.btn-outline:hover::before {
+  opacity: 0.1;
 }
 
 .btn-outline:hover {
-  background: rgba(59, 130, 246, 0.1);
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
 }
 
 /* Social links */
@@ -141,16 +200,22 @@
 }
 
 .social-links a {
-  color: #d1d5db;
+  color: var(--neutral-300);
   transition: all 0.3s ease;
   padding: 0.75rem;
   border-radius: 50%;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
 }
 
 .social-links a:hover {
   color: white;
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.2);
+  background: var(--gradient-primary);
+  transform: scale(1.2) translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  animation: glow 1s ease-in-out;
 }
 
 /* Scroll down */
@@ -159,20 +224,30 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease;
-  animation: bounce 1.5s infinite;
+  color: var(--neutral-400);
+  transition: all 0.3s ease;
+  animation: bounceGlow 2s infinite;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  padding: 0.75rem;
+  backdrop-filter: blur(10px);
 }
 
 .scroll-down:hover {
   color: white;
+  background: var(--gradient-primary);
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
 }
 
-@keyframes bounce {
+@keyframes bounceGlow {
   0%, 100% {
     transform: translate(-50%, 0);
+    filter: drop-shadow(0 0 5px var(--primary-400));
   }
   50% {
-    transform: translate(-50%, 10px);
+    transform: translate(-50%, 15px);
+    filter: drop-shadow(0 0 15px var(--primary-400)) drop-shadow(0 0 25px var(--primary-600));
   }
 }

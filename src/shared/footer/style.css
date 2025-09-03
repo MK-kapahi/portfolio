@@ -1,7 +1,22 @@
 .footer {
-  background-color: #111827; /* Tailwind's bg-gray-900 */
-  color: #ffffff;
+  background: var(--gradient-dark);
+  color: var(--neutral-200);
   padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, var(--primary-600), transparent);
+  opacity: 0.1;
+  animation: floatingBlob 25s infinite ease-in-out reverse;
+  transform: translateX(-50%);
 }
 
 .footer-container {
@@ -25,10 +40,15 @@
 .footer-title {
   font-size: 1.5rem;
   font-weight: bold;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-description {
-  color: #9ca3af; /* Tailwind's text-gray-400 */
+  color: var(--neutral-300);
+  opacity: 0.9;
 }
 
 .footer-links .footer-heading,
@@ -44,17 +64,20 @@
 }
 
 .footer-links-grid a {
-  color: #9ca3af;
+  color: var(--neutral-400);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+  border-radius: 4px;
 }
 
 .footer-links-grid a:hover {
-  color: #ffffff;
+  color: var(--primary-300);
+  transform: translateX(5px);
 }
 
 .footer-contact-info p {
-  color: #9ca3af;
+  color: var(--neutral-300);
   margin: 0.25rem 0;
 }
 
@@ -65,16 +88,23 @@
 }
 
 .footer-icons a {
-  color: #9ca3af;
-  transition: color 0.3s;
+  color: var(--neutral-400);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
 }
 
 .footer-icons a:hover {
-  color: #ffffff;
+  color: white;
+  background: var(--gradient-primary);
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
 }
 
 .footer-bottom {
-  border-top: 1px solid #1f2937; /* Tailwind's border-gray-800 */
+  border-top: 1px solid var(--glass-border);
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -91,7 +121,7 @@
 }
 
 .footer-bottom p {
-  color: #9ca3af;
+  color: var(--neutral-400);
   font-size: 0.875rem;
 }
 
@@ -99,8 +129,25 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer-made {
+    justify-content: flex-start;
+  }
 }
 
 .heart-icon {
-  color: #f87171; /* Tailwind's text-red-400 */
+  color: var(--accent-pink);
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
