@@ -1,7 +1,21 @@
 /* Section */
 .skills-section {
   padding: 5rem 1rem;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary-50) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, var(--accent-cyan), transparent);
+  opacity: 0.1;
+  animation: floatingBlob 25s infinite ease-in-out reverse;
 }
 
 .container {
@@ -18,20 +32,24 @@
 .skills-header h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #111827; /* gray-900 */
+  background: var(--gradient-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .skills-header .underline {
-  width: 6rem;
+  width: 8rem;
   height: 4px;
-  background-color: #2563eb; /* blue-600 */
+  background: var(--gradient-secondary);
   margin: 1rem auto;
   border-radius: 9999px;
+  box-shadow: 0 2px 15px rgba(6, 182, 212, 0.3);
 }
 
 .skills-header p {
   font-size: 1.1rem;
-  color: #4b5563; /* gray-600 */
+  color: var(--neutral-600);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -45,22 +63,44 @@
 
 /* Cards */
 .skill-card {
-  background-color: #f9fafb; /* gray-50 */
-  border-radius: 0.75rem;
+  background: white;
+  border-radius: 1rem;
   padding: 2rem;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid var(--neutral-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover::before {
+  transform: translateX(0);
 }
 
 .skill-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+  border-color: var(--primary-200);
 }
 
 .skill-card h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #111827;
+  color: var(--neutral-800);
   margin-bottom: 1.5rem;
   text-align: center;
+  position: relative;
 }
 
 /* Skills list */
@@ -72,16 +112,27 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.95rem;
-  color: #374151; /* gray-700 */
+  color: var(--neutral-700);
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .progress-bar {
   width: 100%;
-  background-color: #e5e7eb; /* gray-200 */
+  background-color: var(--neutral-200);
   border-radius: 9999px;
   height: 0.5rem;
   overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  border-radius: 9999px;
 }
 
 .progress-fill {
@@ -92,19 +143,23 @@
 
 /* Colors */
 .bg-blue {
-  background-color: #2563eb; /* blue-600 */
+  background: var(--gradient-primary);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .bg-emerald {
-  background-color: #059669; /* emerald-600 */
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .bg-purple {
-  background-color: #7c3aed; /* purple-600 */
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
 .bg-gray {
-  background-color: #6b7280; /* gray-600 */
+  background: linear-gradient(135deg, var(--neutral-600), var(--neutral-500));
+  box-shadow: 0 2px 8px rgba(120, 113, 108, 0.3);
 }
 
 /* Tech Section */
@@ -115,7 +170,7 @@
 
 .tech-section p {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: var(--neutral-600);
   margin-bottom: 2rem;
 }
 
@@ -127,15 +182,33 @@
 }
 
 .tech-badge {
-  background-color: #dbeafe; /* blue-100 */
-  color: #1e40af; /* blue-800 */
+  background: var(--primary-100);
+  color: var(--primary-800);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-badge:hover::before {
+  opacity: 1;
 }
 
 .tech-badge:hover {
-  background-color: #bfdbfe; /* blue-200 */
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }

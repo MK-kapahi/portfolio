@@ -30,6 +30,7 @@ const Home = () => {
       <div className="blob blob-blue"></div>
       <div className="blob blob-purple"></div>
       <div className="blob blob-green"></div>
+      <div className="blob blob-orange"></div>
 
       {/* Content */}
       <motion.div

@@ -1,7 +1,21 @@
 /* Section Styling */
 .projects-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--accent-cyan) 5%, var(--neutral-50) 95%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--accent-pink), transparent);
+  opacity: 0.1;
+  animation: floatingBlob 30s infinite ease-in-out;
 }
 
 .projects-container {
@@ -19,20 +33,25 @@
 .projects-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #111827;
+  background: var(--gradient-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .projects-underline {
-  width: 6rem;
+  width: 8rem;
   height: 0.25rem;
-  background-color: #2563eb;
+  background: var(--gradient-accent);
   margin: 0 auto 1.5rem auto;
+  border-radius: 9999px;
+  box-shadow: 0 2px 15px rgba(236, 72, 153, 0.4);
 }
 
 .projects-subtitle {
   font-size: 1.25rem;
-  color: #4b5563;
+  color: var(--neutral-600);
   max-width: 32rem;
   margin: 0 auto;
 }
@@ -59,15 +78,34 @@
 /* Card */
 .project-card {
   background-color: white;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s ease;
+  border: 1px solid var(--neutral-200);
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: translateX(0);
 }
 
 .project-card:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-200);
 }
 
 /* Image */
@@ -119,12 +157,20 @@
 .project-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--neutral-800);
   margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .project-description {
-  color: #4b5563;
+  color: var(--neutral-600);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -132,14 +178,37 @@
 /* Tech Tags */
 .tech-tag {
   padding: 0.25rem 0.75rem;
-  background-color: #dbeafe;
-  color: #1e40af;
+  background: var(--primary-100);
+  color: var(--primary-700);
   font-size: 0.875rem;
   border-radius: 9999px;
   font-weight: 500;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   display: inline-block;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-tag:hover::before {
+  opacity: 1;
+}
+
+.tech-tag:hover {
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 /* View More */
@@ -147,13 +216,33 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background-color: #111827;
+  background: var(--gradient-primary);
   color: white;
   font-weight: 500;
   border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-colored);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-more::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.view-more:hover::before {
+  left: 100%;
 }
 
 .view-more:hover {
-  background-color: #1f2937;
+  background: var(--gradient-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
