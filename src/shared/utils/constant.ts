@@ -1,15 +1,17 @@
 export const user = {
-    name: "Parshant Sharma",
-    contact: "+91 7719617464",
-    email: "sparshant2001@gmail.com",
-    address: "VPO Hoashiarpur",
-    footer_description: "Passionate Full Stack Developer turning ideas into seamless, impactful web applications",
-    linkedin: "https://www.linkedin.com/in/parshant-sharma-721714195/",
+    name: "Muskan Kapahi",
+    contact: "+91 9877762862",
+    email: "muskankapahi123@gmail.com",
+    address: "Panchkula, Haryana",
+    footer_description: "Proactive Full Stack Developer with 2 years of experience in web application development",
+    linkedin: "https://www.linkedin.com/in/muskan-kapahi/",
+    github: "https://github.com/muskankapahi",
 }
 
 export const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
@@ -17,84 +19,121 @@ export const navItems = [
 
 export const projects = [
     {
-        "title": "Wheel of Fortune",
-        "description": "Developed an animated wheel using PNGs, D3, and frame animation at 60 FPS on 95%+ devices. Built 360° rotation logic with knob impact, sound, and randomized stops, boosting engagement by 40%. Packaged as a reusable component with glowing rotating bulb frame; reduced future dev time by 50%.",
-        "technology": ["D3.js", "React.js"],
-        "link": "https://spinwheeloffortune.netlify.app/"
+        "title": "INDIGO",
+        "description": "Led the front-end revamp of the IndiGo website by developing modular, reusable, and fully responsive components, boosting code maintainability and performance scalability by 35%. Engineered core AEM components for homepage including Header, Footer, and Discover Destination sections.",
+        "technology": ["React.js", "AEM", "JavaScript", "CSS"],
+        "link": "https://www.goindigo.in/",
+        "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop&crop=center",
+        "github": ""
     },
     {
-        "title": "Mini Heart",
-        "description": "Managed 100+ child donation stories, increasing donor engagement by 30%. Integrated advanced filtering and trimmed image upload, improving data handling by 40%.",
-        "technology": ["React.js"],
-        "link": "https://minihearts.org/"
+        "title": "Miniheart",
+        "description": "Developed functionality for creating and managing over 100+ stories for children and fundraisers, increasing donor engagement by 30%. Integrated advanced filtering capabilities, reducing manual data handling time by 40% and improving admin efficiency.",
+        "technology": ["React.js", "JavaScript", "CSS"],
+        "link": "https://minihearts.org/",
+        "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop&crop=center",
+        "github": ""
+    },
+    {
+        "title": "GMAC",
+        "description": "Built a dynamic email and landing page editor with drag-and-drop functionality, reducing template creation effort by 50%. Integrated real-time synchronization with Marketo and HubSpot, reducing manual upload errors by 40%. Developed and optimized backend APIs using Node.js and MySQL.",
+        "technology": ["React.js", "Node.js", "MySQL", "Sass", "jQuery"],
+        "link": "",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center",
+        "github": ""
     },
     {
         "title": "Spinnr",
-        "description": "Developed a responsive dating web app UI using Redux Toolkit. Used React Query for optimized API handling and caching. Integrated Firebase-based real-time chat and user management.",
-        "technology": ["React.js", "Firebase"],
-        "link": ""
+        "description": "Developed a dynamic and responsive frontend using React.js and Redux Toolkit, improving user engagement by 30% and optimizing data flow. Integrated React Query for efficient data fetching, caching, and background updates, resulting in a 40% reduction in API call times.",
+        "technology": ["React.js", "Redux Toolkit", "React Query", "Firebase"],
+        "link": "",
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=center",
+        "github": ""
     },
     {
-        "title": "MrCashback",
-        "description": "Built a real-time synced CMS for cashback campaigns, reducing admin work by 50%. Implemented dynamic content mapping and a leaderboard, improving delivery speed by 40%. Integrated push notifications (browser & in-app) via FCM, increasing re-engagement by 25%.",
-        "technology": ["React.js", "Firebase"],
-        "link": "https://mrcashback.com/"
-    },
-    {
-        "title": "Penny Auction",
-        "description": "Developed an admin panel for managing auctions, product listings, and live tracking. Built a secure payment module for bid verification and transactions. Created an intuitive dashboard improving admin flow by 45%.",
-        "technology": ["React.js", "TypeScript"],
-        "link": ""
-    },
-    {
-        "title": "Speltips",
-        "description": "Managed complete lifecycle including client meetings, CMS, admin, and user systems. Integrated WebSockets, role-based login (Master/Publisher/Operator), and PWA with auto-update. Designed real-time dashboards with 40% improvement in team operations.",
-        "technology": ["React.js", "TypeScript"],
-        "link": "https://speltips.se/"
-    },
-    {
-        "title": "Cancer Clarity",
-        "description": "Migrated project from CRA to Vite and Node v16 to v22, enhancing build and DX. Refactored codebase, removed redundant libraries, and added ESLint, Prettier, Husky. Currently implementing new features and stabilizing releases.",
-        "technology": ["React.js", "Vite", "Node.js"],
-        "link": ""
-    },
-    {
-        "title": "Pet vs Cat",
-        "description": "Developed a Web3-enabled app using Warpcast + Framecaster for decentralized interactions. Enabled wallet connection via WalletConnect for on-chain access. Built a Farcaster-based social UI to support community engagement and NFT readiness.",
-        "technology": ["Next.js", "TypeScript", "Warpcast", "Framecaster"],
-        "link": ""
+        "title": "Cyient Website Revamp",
+        "description": "Contributed to the revamp of the Cyient website, building over 30+ responsive and modular components. Improved page load speed by 25% and engineered customized HubSpot modules for seamless CMS integration and consistent brand-aligned user experience.",
+        "technology": ["HTML", "CSS", "JavaScript", "HubSpot"],
+        "link": "https://www.cyient.com/",
+        "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop&crop=center",
+        "github": ""
     }
 ]
 
 export const skillCategories = [
     {
-        title: "Frontend",
+        title: "Programming Languages",
         skills: [
-            { name: "React", level: 95 },
+            { name: "JavaScript", level: 95 },
             { name: "TypeScript", level: 90 },
-            { name: "Tailwind CSS", level: 85 },
-            { name: "Next.js", level: 80 },
+            { name: "SQL", level: 85 },
+            { name: "Java", level: 80 },
         ],
         color: "blue",
     },
     {
-        title: "Backend",
+        title: "Frontend Technologies",
         skills: [
-            { name: "Node.js", level: 90 },
-            { name: "Python", level: 85 },
-            { name: "PostgreSQL", level: 80 },
-            { name: "MongoDB", level: 75 },
+            { name: "React.js", level: 95 },
+            { name: "HTML5", level: 90 },
+            { name: "CSS", level: 90 },
+            { name: "Angular", level: 85 },
         ],
         color: "emerald",
     },
     {
-        title: "Tools & Others",
+        title: "Backend Technologies",
         skills: [
-            { name: "Git & GitHub", level: 95 },
-            { name: "Docker", level: 70 },
-            { name: "AWS", level: 65 },
-            { name: "Figma", level: 80 },
+            { name: "Node.js", level: 90 },
+            { name: "Express.js", level: 85 },
+            { name: "RESTful APIs", level: 90 },
+            { name: "AEM", level: 80 },
         ],
         color: "purple",
     },
+    {
+        title: "Database & Tools",
+        skills: [
+            { name: "MongoDB", level: 85 },
+            { name: "Firebase", level: 80 },
+            { name: "Git & GitHub", level: 95 },
+            { name: "MySQL", level: 80 },
+        ],
+        color: "orange",
+    },
 ];
+
+export const experience = [
+    {
+        title: "Full Stack Developer",
+        company: "Grazittilnteractive",
+        location: "Panchkula, Haryana",
+        duration: "July 2023 - Present",
+        achievements: [
+            "Developed and maintained responsive web applications using React, Angular, and AEM, optimizing front-end experiences that increased user satisfaction by 20% and improved cross-platform compatibility",
+            "Created static and dynamic AEM components, ensuring seamless backend integration and improving content reusability by 40%, while maintaining alignment with UI/UX design systems",
+            "Crafted mobile-first accessible layouts using HTML, CSS, and JavaScript, enhancing engagement by 25% and improving overall user experience",
+            "Engineered scalable backend services using Node.js, Express, and MongoDB, supporting high-traffic RESTful APIs, and reducing data retrieval times by 30% through efficient data management"
+        ]
+    },
+    {
+        title: "Angular Intern",
+        company: "Chicmic",
+        location: "Sahibzada Ajit Singh Nagar, Punjab",
+        duration: "January 2023 - June 2023",
+        achievements: [
+            "Implemented a real-time chat system using WebSockets in Angular, enabling instantaneous two-way messaging with <100ms latency, increasing user retention by 15% on chat-enabled pages",
+            "Engineered dynamic UI components with features like live message rendering, typing indicators, and status updates, boosting user engagement by 30% during peak activity",
+            "Integrated secure messaging workflows using JWT-based authentication, ensuring 100% secure, session-based communication with zero breaches during deployment",
+            "Leveraged RxJS to manage live message streams reactively, reducing memory leaks and improving message delivery performance by 20%"
+        ]
+    }
+];
+
+export const education = {
+    degree: "Bachelor of Technology in Computer Science & Engineering",
+    institution: "Baba Farid College of Engineering & Technology",
+    location: "Bathinda, Punjab",
+    graduation: "2023",
+    score: "8.15 CGPA"
+};

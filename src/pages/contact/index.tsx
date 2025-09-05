@@ -12,9 +12,22 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:muskankapahi123@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
     setFormData({ name: '', email: '', message: '' });
-    alert("Thank you for your message! I'll get back to you soon.");
+    
+    // Show success message
+    alert("Thank you for your message! Your email client will open to send the message.");
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -51,7 +64,7 @@ const Contact = () => {
               </div>
               <div className='contact-item-info'>
                 <p>Email</p>
-                <a href="mailto:alex@example.com">{user.email}</a>
+                <a href={`mailto:${user.email}`}>{user.email}</a>
               </div>
             </div>
 
@@ -61,7 +74,7 @@ const Contact = () => {
               </div>
               <div className='contact-item-info'>
                 <p>Phone</p>
-                <a href="tel:+1234567890">{user.contact}</a>
+                <a href={`tel:${user.contact}`}>{user.contact}</a>
               </div>
             </div>
 
@@ -71,13 +84,13 @@ const Contact = () => {
               </div>
               <div className='contact-item-info'>
                 <p>Location</p>
-                <p>San Francisco, CA</p>
+                <p>{user.address}</p>
               </div>
             </div>
 
             <div className="contact-socials">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
+              <a href={user.github} target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
+              <a href={user.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><Twitter size={20} /></a>
             </div>
           </div>

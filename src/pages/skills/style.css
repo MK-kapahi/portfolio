@@ -1,12 +1,14 @@
 /* Section */
 .skills-section {
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
   background-color: #ffffff;
+  margin: 2rem 0;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Header */
@@ -144,4 +146,76 @@
   display: flex;
   gap : 24px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Orange color for new category */
+.bg-orange {
+  background-color: #ea580c; /* orange-600 */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 3rem 1rem;
+  }
+  
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+  
+  .skills-header p {
+    font-size: 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skill-card {
+    padding: 1.5rem;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .skills-animate {
+    gap: 16px;
+  }
+  
+  .tech-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .skills-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .skill-card {
+    padding: 1.25rem;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .skill-label {
+    font-size: 0.875rem;
+  }
+  
+  .skills-animate {
+    gap: 12px;
+  }
+  
+  .tech-section p {
+    font-size: 0.9rem;
+  }
 }

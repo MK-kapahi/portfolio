@@ -2,6 +2,7 @@ import './App.css'
 import Header from './shared/header'
 import Home from './pages/home'
 import About from './pages/about'
+import Experience from './pages/experience'
 import Skills from './pages/skills'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
@@ -15,6 +16,7 @@ function App() {
      <Header/>
      <Home/>
      <About/>
+     <Experience/>
      <Skills/>
      <Projects/>
      <Contact/>

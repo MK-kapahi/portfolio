@@ -17,9 +17,9 @@ header.scrolled {
 }
 
 .header-container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,4 +101,49 @@ nav.desktop-nav button:hover {
 .mobile-nav button:hover {
   color: #2563eb;
   background: #f1f5f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 12px;
+  }
+  
+  .logo-button {
+    font-size: 1.25rem;
+  }
+  
+  nav.desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 8px;
+    height: 56px;
+  }
+  
+  .logo-button {
+    font-size: 1.125rem;
+  }
+  
+  .mobile-menu-button {
+    padding: 6px;
+    font-size: 1.25rem;
+  }
 }

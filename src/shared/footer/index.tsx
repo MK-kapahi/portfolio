@@ -35,10 +35,10 @@ const Footer = () => {
             <div className="footer-links-grid">
               <a href="#home">Home</a>
               <a href="#about">About</a>
+              <a href="#experience">Experience</a>
               <a href="#skills">Skills</a>
               <a href="#projects">Projects</a>
               <a href="#contact">Contact</a>
-              <a href="/resume.pdf">Resume</a>
             </div>
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
             <div className="footer-icons">
               <motion.a
-                href="https://github.com"
+                href={user.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={iconHover}
@@ -61,7 +61,7 @@ const Footer = () => {
                 <FaGithub className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href={user.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={iconHover}

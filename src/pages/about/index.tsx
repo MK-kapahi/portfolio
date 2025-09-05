@@ -15,16 +15,16 @@ const About = () => {
           {/* Text Section */}
           <div className="about-text">
             <p>
-              I'm a passionate Full Stack Developer with 2 years of experience specializing in React, TypeScript, Node.js, and modern web technologies. My focus is on building scalable, user-friendly applications that combine strong performance with clean, maintainable code.
+              I'm a proactive Full Stack Developer with 2 years of experience in web application development. I've engineered powerful web applications with React and Node.js, boosting client engagement by 30%, and advanced a flight platform's efficiency by 25% through effective module implementation.
             </p>
             <p>
-           I enjoy turning complex problems into simple, elegant solutions while keeping the user experience at the center of everything I build. Along the way, I've developed a strong growth mindset and a constant curiosity for learning new tools, frameworks, and best practices.
+              My expertise spans across React.js, Node.js, and AEM, where I craft high-performance digital solutions. I specialize in developing responsive web applications, creating static and dynamic AEM components, and building scalable backend services that support high-traffic RESTful APIs.
             </p>
             <p>
-              Beyond my technical skills, I bring a strong growth mindset and a genuine enthusiasm for continuous learning. Outside of coding, you'll often find me brainstorming new project ideas, reading about emerging technologies, or simply enjoying a good cup of coffee while mapping out my next challenge.
+              I have a proven track record of improving user satisfaction by 20%, enhancing cross-platform compatibility, and reducing data retrieval times by 30% through efficient data management. My work focuses on mobile-first accessible layouts and seamless backend integration.
             </p>
             <p>
-              I'm always open to exciting opportunities and collaborations that allow me to create impactful solutions and grow as a developer.
+              I'm seeking a Full Stack Developer role where I can leverage my React.js, Node.js, and AEM skills to create impactful solutions and continue growing as a developer in the tech industry.
             </p>
 
             {/* Features */}
